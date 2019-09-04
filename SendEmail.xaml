@@ -1,0 +1,89 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SendEmail" this:SendEmail.in_accepted="True" this:SendEmail.in_applicantEmail="student1.utd@gmail.com" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_accepted" Type="InArgument(x:Boolean)" />
+    <x:Property Name="in_applicantEmail" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>780,468.8</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SendEmail_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Security</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SendEmail" sap:VirtualizedContainerService.HintSize="740,388.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Default="admissions1.utd@gmail.com" Name="username" />
+      <Variable x:TypeArguments="x:String" Default="UiPathAug2019" Name="password" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <If Condition="[in_accepted]" sap:VirtualizedContainerService.HintSize="701.6,296" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Congratulations for getting Admitted into University of Texas – Dallas for Fall 2019 Term. &#xA;&#xA;Please see the attached letter regarding your admission to the M.S. in Computer Science programat MTSU for the Spring 2015 semester. Our records indicate that your MTSU student identification number is M01319545. Please use this number on any documentation you may submit. If you have made changes in address, entry date, or cancellation, please notify us as soon as possible.&#xA;&#xA;Also, please read the below information very carefully.&#xA;&#xA;The following items are needed to issue the I-20:&#xA;1)Proof of insurance is required for all non-immigrant visa holders. You may purchase the required insurance through the university. If you elect to purchase insurance through the university, you do not pay the insurance fee until you have registered for courses on our campus. At that time, the insurance fee you select will become part of your tuition bill. If you have insurance through a private insurance company, that insurance company MUST fill out our state-approved insurance form. Please fill out the following state-approved form to show proof of private insurance or to select the insurance through our university.&#xA;&#xA;http://www.mtsu.edu/graduate/pdf/insurance.pdf&#xA;&#xA;2)All non-immigrant visa holders must also show proof of financial documentation to support their study within the U.S. The amount F-1 student visa holders must show is $31000 USD. This amount may be shown in a checking account or a savings account (orthe two accounts combined). Please fill out the following financial form.&#xA;&#xA;http://www.mtsu.edu/graduate/pdf/financial2009.pdf&#xA;&#xA;&#xA;The above two forms must be submitted prior to the issuance of the I-20.&#xA;&#xA;Please read the following information very carefully. The medical requirements for attendance at MTSU are as follows. These requirements should be completed prior to you arrival at MTSU.If you wait until you arrive at MTSU to get any or all of these vaccinations, it will seriously affect your ability to register for full-time coursework.&#xA;&#xA;   1)TB Screening Form: You have 30 days from the first day of class to show proof of freedom from tuberculosis (TB).If you have already had the test, you may submit the results at this time (TB test must have been within the last six months before classes begin.) If you do not have a current test, you may be required to go to the Health Services Office on our campus for the TB screening.http://www.mtsu.edu/graduate/pdf/TBQuestionnaire.pdf&#xA;   &#xA;   2)Immunization Certification: The state of Tennessee requires that you show proof of two vaccinations against Measles, Mumps, &amp; Rubella (MMR) and Varicella (chicken pox) prior to registering for courses. The law for the state of Tennessee does not recognize your first vaccination if it was givento you before you turned one year old. You must submit proof of at least one MMR vaccination and one Varicella vaccination prior to your arrival on campus. You will then be required to obtain the second MMR and Varicellavaccination on campus prior to the beginning of classes. The second MMR vaccination may be given as soon as 30 days after the first dose with no ill-effect to yourself. If you have already had both vaccinations, you can submit your vaccination records at this time. You must prove that both doses of MMR and Varicella were given before you can begin full-time classes. &#xA;   http://www.mtsu.edu/healthservices/PDFs/Combined_Certificate_of_Immunization.pdf&#xA;   &#xA;Failure to complete these medical requirements may result in being withdrawn from classes. This will create serious consequences with your immigration status.&#xA;For any questions regarding immigration or I-20s, please contact Meghan Lunders at meghan.lunders@mtsu.edu.&#xA;&#xA;Warm regards,&#xA;Isaac Taylor&#xA;International Graduate Analyst&#xA;College of Graduate Studies&#xA;Middle Tennessee State University&#xA;615-494-7869" DisplayName="Send SMTP Mail Message" Email="admissions1.utd@gmail.com" EnableSSL="True" From="d@d.com" sap:VirtualizedContainerService.HintSize="330.4,146.4" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="UiPathAug2019" Port="587" SecureConnection="Auto" Server="Smtp.gmail.com" Subject="Admissions Answer - UTD 2019 CS Fall 2019" To="[in_applicantEmail]">
+          <ui:SendMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+          </ui:SendMail.Files>
+        </ui:SendMail>
+      </If.Then>
+      <If.Else>
+        <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Thank you for applying to the George Washington University. After completing a careful review of your application and supporting credentials, our Admissions Committee has concluded that we are unable to offer you acceptance to the university. This year we received nearly 22,000 applications for 2,350 places, making the competition keen and our task difficult. Regrettably, we cannot accommodate all students interested in GW.&#xA;&#xA;If your interest in GW remains, please note that we enroll a transfer class of nearly 300 students each year. We look forward to hearing from you in the future if you believe your needs could still be served at GW.&#xA;&#xA;We are honored to have been placed on your list of college choices and appreciate the time you spent creating a thoughtful application for admission. We wish you great success in your college studies.&#xA;&#xA;Sincerely,&#xA;&#xA;Karen S. Felton&#xA;&#xA;Director of Admissions&#xA;&#xA;College of William &amp; Mary" DisplayName="Send SMTP Mail Message" Email="admissions1.utd@gmail.com" EnableSSL="True" From="d@d.com" sap:VirtualizedContainerService.HintSize="330.4,146.4" sap2010:WorkflowViewState.IdRef="SendMail_2" IsBodyHtml="False" Password="UiPathAug2019" Port="587" SecureConnection="Auto" Server="Smtp.gmail.com" Subject="Admissions Answer - UTD 2019 CS Fall 2019" To="[in_applicantEmail]">
+          <ui:SendMail.Files>
+            <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+          </ui:SendMail.Files>
+        </ui:SendMail>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>
